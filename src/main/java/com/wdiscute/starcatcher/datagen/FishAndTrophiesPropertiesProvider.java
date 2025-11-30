@@ -1670,8 +1670,6 @@ public class FishAndTrophiesPropertiesProvider extends DatapackBuiltinEntriesPro
             //  lanternfish
             //  tripodfish
 
-            //endregion Sullys Mod
-  
 
     );
     //endregion restricted fps
