@@ -124,17 +124,17 @@ public interface ModItems
 
 
     //cheater items
-    DeferredItem<Item> AWARD_ALL_FISHES = OTHERS_REGISTRY.register("award_all_fishes", AwardAllFishes::new);
-    DeferredItem<Item> AWARD_ONE_FISH = OTHERS_REGISTRY.register("award_one_fish", AwardOneFish::new);
-    DeferredItem<Item> REVOKE_ALL_FISHES = OTHERS_REGISTRY.register("revoke_all_fishes", RevokeAllFishes::new);
+    DeferredItem<Item> AWARD_ALL_FISHES = ITEMS_REGISTRY.register("award_all_fishes", AwardAllFishes::new);
+    DeferredItem<Item> AWARD_ONE_FISH = ITEMS_REGISTRY.register("award_one_fish", AwardOneFish::new);
+    DeferredItem<Item> REVOKE_ALL_FISHES = ITEMS_REGISTRY.register("revoke_all_fishes", RevokeAllFishes::new);
 
-    DeferredItem<Item> AWARD_ALL_TROPHIES = OTHERS_REGISTRY.register("award_all_trophies", AwardAllTrophies::new);
-    DeferredItem<Item> REVOKE_ALL_TROPHIES = OTHERS_REGISTRY.register("revoke_all_trophies", RevokeAllTrophies::new);
+    DeferredItem<Item> AWARD_ALL_TROPHIES = ITEMS_REGISTRY.register("award_all_trophies", AwardAllTrophies::new);
+    DeferredItem<Item> REVOKE_ALL_TROPHIES = ITEMS_REGISTRY.register("revoke_all_trophies", RevokeAllTrophies::new);
 
-    DeferredItem<Item> AWARD_ALL_SECRETS = OTHERS_REGISTRY.register("award_all_secrets", AwardAllSecrets::new);
-    DeferredItem<Item> REVOKE_ALL_SECRETS = OTHERS_REGISTRY.register("revoke_all_secrets", RevokeAllSecrets::new);
+    DeferredItem<Item> AWARD_ALL_SECRETS = ITEMS_REGISTRY.register("award_all_secrets", AwardAllSecrets::new);
+    DeferredItem<Item> REVOKE_ALL_SECRETS = ITEMS_REGISTRY.register("revoke_all_secrets", RevokeAllSecrets::new);
 
-    DeferredItem<Item> REVOKE_ALL_EXTRAS = OTHERS_REGISTRY.register("revoke_all_extras", RevokeAllExtras::new);
+    DeferredItem<Item> REVOKE_ALL_EXTRAS = ITEMS_REGISTRY.register("revoke_all_extras", RevokeAllExtras::new);
 
     //treasure
     DeferredItem<Item> WATERLOGGED_SATCHEL = ITEMS_REGISTRY.register("waterlogged_satchel", () -> new FishingTreasure(Starcatcher.rl("treasure/waterlogged_satchel")));
