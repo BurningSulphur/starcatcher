@@ -91,7 +91,7 @@ public class FishAndTrophiesPropertiesProvider extends DatapackBuiltinEntriesPro
 //                                    )
 //                            )
 //                    ,
-
+ 
 
             fish(BuiltInRegistries.ITEM.wrapAsHolder(Items.PUFFERFISH)).withCustomName("Super Cool Pufferfish")
                     .withBaseChance(2)
