@@ -1604,6 +1604,39 @@ public class FishAndTrophiesPropertiesProvider extends DatapackBuiltinEntriesPro
 
 
             //endregion Sullys Mod
+        
+            //todo:
+            //collectorsreap:
+            //  platinum_bass
+            //  tiger_prawn
+            //  clam
+            //  urchin
+            //  (Maybe not) chieftain_crab
+
+            //upgrade_aquatic:
+            //  pike
+            //  perch
+            //  lionfish
+
+            //environmental:
+            //  koi
+
+            //crittersandcompanions:
+            //  koi_fish
+            //  clam (fresh water clam)
+
+            //miners_delight:
+            //  glow_squid
+            //  squid
+
+            //alexsmobs:
+            //  cosmic_cod
+            //  flying_fish
+            //  blobfish
+
+            //alexscaves:
+            //  lanternfish
+            //  tripodfish
 
 
     );
