@@ -1670,6 +1670,20 @@ public class FishAndTrophiesPropertiesProvider extends DatapackBuiltinEntriesPro
                             .withBiomesTags(rl("upgrade_aquatic", "biome/has_spawn/lionfish")))
                     .withMod("upgrade_aquatic"),
 
+            fish(fromRL("upgrade_aquatic", "thrasher_tooth"))
+                    .withSizeAndWeight(FishProperties.sw(28, 8, 260, 60, 10, 20))
+                    .withHasGuideEntry(false)
+                    .withDifficulty(FishProperties.Difficulty.REALLY_HEAVY_FISH)
+                    .withRarity(FishProperties.Rarity.LEGENDARY)
+                    .withWorldRestrictions(FishProperties.WorldRestrictions.OVERWORLD
+                            .withBiomesTags(rl("upgrade_aquatic", "biome/has_spawn/thrasher")))
+                    .withAlwaysSpawnEntity(true)
+                    .withBaseChance(1)
+                    .withEntityToSpawn(rl("upgrade_aquatic", "thrasher"))
+                    .withOverrideMinigameItem(true)
+                    .withItemToOverrideWith(ModItems.UNKNOWN_FISH)
+                    .withMod("upgrade_aquatic"),
+
             //add thrasher as an entity spawn with hide during minigame
 
             //endregion Upgrade Aquatic
@@ -1736,6 +1750,21 @@ public class FishAndTrophiesPropertiesProvider extends DatapackBuiltinEntriesPro
                     .withSkipMinigame(true)
                     .withWorldRestrictions(FishProperties.WorldRestrictions.OVERWORLD
                             .withBiomesTags(rl("collectorsreap", "biome/has_spawn/urchin")))
+                    .withMod("collectorsreap"),
+
+
+            fish(fromRL("collectorsreap", "chieftain_crab"))
+                    .withSizeAndWeight(FishProperties.sw(28, 8, 260, 60, 10, 20))
+                    .withBaseChance(5)
+                    .withHasGuideEntry(false)
+                    .withDifficulty(FishProperties.Difficulty.REALLY_HEAVY_FISH)
+                    .withRarity(FishProperties.Rarity.UNCOMMON)
+                    .withWorldRestrictions(FishProperties.WorldRestrictions.OVERWORLD
+                            .withBiomesTags(rl("collectorsreap", "biome/has_spawn/chieftain_crab")))
+                    .withAlwaysSpawnEntity(true)
+                    .withEntityToSpawn(rl("collectorsreap", "chieftain_crab"))
+                    .withOverrideMinigameItem(true)
+                    .withItemToOverrideWith(ModItems.UNKNOWN_FISH)
                     .withMod("collectorsreap"),
 
 
@@ -1876,6 +1905,23 @@ public class FishAndTrophiesPropertiesProvider extends DatapackBuiltinEntriesPro
                             FishProperties.Treasure.DEFAULT,
                             new FishProperties.Difficulty.Extras(false, false, true)))
                     .withMod("alexscaves"),
+
+
+            fish(fromRL("alexscaves", "trilocaris_tail"))
+                    .withSizeAndWeight(FishProperties.sw(30, 10, 1000, 5000, 10, 20))
+                    .withRarity(FishProperties.Rarity.RARE)
+                    .withWorldRestrictions(FishProperties.WorldRestrictions.OVERWORLD
+                            .withBiomes(rl("alexscaves", "primordial_caves")))
+                    .withDifficulty(new FishProperties.Difficulty(12, 15,30,25, 7,
+                            new FishProperties.Difficulty.Markers(true, true, true, false),
+                            FishProperties.Treasure.DEFAULT,
+                            new FishProperties.Difficulty.Extras(false, false, true)))
+                    .withAlwaysSpawnEntity(true)
+                    .withEntityToSpawn(rl("alexscaves", "trilocaris"))
+                    .withOverrideMinigameItem(true)
+                    .withItemToOverrideWith(ModItems.UNKNOWN_FISH)
+                    .withMod("alexscaves"),
+
 
             // Trilocaris (when entity fishing is added
 
