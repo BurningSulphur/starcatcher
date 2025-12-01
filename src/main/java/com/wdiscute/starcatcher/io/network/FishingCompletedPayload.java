@@ -62,7 +62,7 @@ public record FishingCompletedPayload(int time, boolean completedTreasure, boole
                     if (time() != -1) {
                         FishProperties fp = fbe.fpToFish;
 
-                        ModCriterionTriggers.MINIGAME_COMPLETED.get().trigger((ServerPlayer) player, hits(), perfectCatch(), completedTreasure(), time(), fp.fish());
+                        ModCriterionTriggers.MINIGAME_COMPLETED.get().trigger((ServerPlayer) player, hits(), perfectCatch(), completedTreasure(), time(), fp.catchInfo().fish());
                         //MAKE THIS DATA DRIVEN
 //                        if (fbe.stack.is(ModItems.THUNDERCHARGED_EEL))
 //                        {
@@ -73,7 +73,7 @@ public record FishingCompletedPayload(int time, boolean completedTreasure, boole
 //                        }
 
                         //create itemStacks
-                        ItemStack is = new ItemStack(fp.fish());
+                        ItemStack is = new ItemStack(fp.catchInfo().fish());
                         ItemStack treasure = new ItemStack(BuiltInRegistries.ITEM.get(fp.dif().treasure().loot()));
 
                         //assign custom name if fish has one

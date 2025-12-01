@@ -175,7 +175,7 @@ public class FishingBobEntity extends Projectile
             )
             {
 
-                ItemStack is = new ItemStack(BuiltInRegistries.ITEM.get(tp.fp().fish().getKey()));
+                ItemStack is = new ItemStack(BuiltInRegistries.ITEM.get(tp.fp().catchInfo().fish().getKey()));
                 is.set(ModDataComponents.TROPHY, tp);
                 if (!tp.customName().isEmpty())
                     is.set(DataComponents.ITEM_NAME, Component.translatable(tp.customName()));
@@ -230,7 +230,7 @@ public class FishingBobEntity extends Projectile
         if (skipsMinigame)
         {
 
-            ItemStack is = new ItemStack(fpToFish.fish());
+            ItemStack is = new ItemStack(fpToFish.catchInfo().fish());
 
             if (!Config.ENABLE_MINIGAME.get() && !fpToFish.skipMinigame())
             {
