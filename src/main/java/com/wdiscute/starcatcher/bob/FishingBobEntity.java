@@ -313,8 +313,8 @@ public class FishingBobEntity extends Projectile
     {
         if (level().isClientSide) return false;
 
-        boolean holdingRod = player.getMainHandItem().is(ModItems.ROD)
-                || player.getOffhandItem().is(ModItems.ROD);
+        boolean holdingRod = player.getMainHandItem().is(StarcatcherTags.RODS)
+                || player.getOffhandItem().is(StarcatcherTags.RODS);
 
         if (!player.isRemoved() && player.isAlive() && holdingRod && !(this.distanceToSqr(player) > 1024))
         {
