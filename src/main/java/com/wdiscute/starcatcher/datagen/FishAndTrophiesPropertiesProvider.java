@@ -531,7 +531,7 @@ public class FishAndTrophiesPropertiesProvider extends DatapackBuiltinEntriesPro
                     .withSizeAndWeight(FishProperties.sw(300, 150, 16000, 7000, 10, 20))
                     .withDifficulty(FishProperties.Difficulty.SINGLE_BIG_FAST)
                     .withRarity(FishProperties.Rarity.EPIC)
-                    .withWorldRestrictions(FishProperties.WorldRestrictions.OVERWORLD_CAVES.withMustBeCaughtBelowY(-20)
+                    .withWorldRestrictions(FishProperties.WorldRestrictions.OVERWORLD_STONE_CAVES.withMustBeCaughtBelowY(-20)
                             .withMustBeCaughtAboveY(-40)),
 
             //dripstone caves
@@ -1979,7 +1979,7 @@ public class FishAndTrophiesPropertiesProvider extends DatapackBuiltinEntriesPro
 
     public static FishProperties overworldCavesFish(Holder<Item> fish) {
         return FishProperties.DEFAULT.withFish(fish)
-                .withWorldRestrictions(FishProperties.WorldRestrictions.OVERWORLD_CAVES);
+                .withWorldRestrictions(FishProperties.WorldRestrictions.OVERWORLD_STONE_CAVES);
     }
 
     public static FishProperties overworldDripstoneCavesFish(Holder<Item> fish) {
