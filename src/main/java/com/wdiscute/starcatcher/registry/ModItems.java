@@ -70,6 +70,19 @@ public interface ModItems
 
     //fishing rod skins
     DeferredItem<Item> NATURALIST_ROD = RODS_REGISTRY.register("naturalist_rod", StarcatcherFishingRod::new);
+    DeferredItem<Item> ICEBORN_ROD = RODS_REGISTRY.register("iceborn_rod", StarcatcherFishingRod::new);
+    DeferredItem<Item> MAGMAFORGED_ROD = RODS_REGISTRY.register("magmaforged_rod", StarcatcherFishingRod::new);
+    DeferredItem<Item> SLIMED_ROD = RODS_REGISTRY.register("slimed_rod", StarcatcherFishingRod::new);
+    DeferredItem<Item> SHARKTOOTH_ROD = RODS_REGISTRY.register("sharktooth_rod", StarcatcherFishingRod::new);
+    DeferredItem<Item> AZURE_CRYSTAL_ROD = RODS_REGISTRY.register("azure_crystal_rod", StarcatcherFishingRod::new);
+    DeferredItem<Item> GOOD_OLD_ROD = RODS_REGISTRY.register("good_old_rod", StarcatcherFishingRod::new);
+    DeferredItem<Item> BAMBOO_ROD = RODS_REGISTRY.register("bamboo_rod", StarcatcherFishingRod::new);
+    DeferredItem<Item> OBSIDIAN_ROD = RODS_REGISTRY.register("obsidian_rod", StarcatcherFishingRod::new);
+    DeferredItem<Item> ALPHA_ROD = RODS_REGISTRY.register("alpha_rod", StarcatcherFishingRod::new);
+    DeferredItem<Item> BONER_ROD = RODS_REGISTRY.register("boner_rod", StarcatcherFishingRod::new);
+    DeferredItem<Item> SKY_ROD = RODS_REGISTRY.register("sky_rod", StarcatcherFishingRod::new);
+    DeferredItem<Item> LUSH_GLOWBERRY_ROD = RODS_REGISTRY.register("lush_glowberry_rod", StarcatcherFishingRod::new);
+    DeferredItem<Item> HUMBLE_ROD = RODS_REGISTRY.register("humble_rod", StarcatcherFishingRod::new);
 
 
 
@@ -111,17 +124,17 @@ public interface ModItems
 
 
     //cheater items
-    DeferredItem<Item> AWARD_ALL_FISHES = OTHERS_REGISTRY.register("award_all_fishes", AwardAllFishes::new);
-    DeferredItem<Item> AWARD_ONE_FISH = OTHERS_REGISTRY.register("award_one_fish", AwardOneFish::new);
-    DeferredItem<Item> REVOKE_ALL_FISHES = OTHERS_REGISTRY.register("revoke_all_fishes", RevokeAllFishes::new);
+    DeferredItem<Item> AWARD_ALL_FISHES = ITEMS_REGISTRY.register("award_all_fishes", AwardAllFishes::new);
+    DeferredItem<Item> AWARD_ONE_FISH = ITEMS_REGISTRY.register("award_one_fish", AwardOneFish::new);
+    DeferredItem<Item> REVOKE_ALL_FISHES = ITEMS_REGISTRY.register("revoke_all_fishes", RevokeAllFishes::new);
 
-    DeferredItem<Item> AWARD_ALL_TROPHIES = OTHERS_REGISTRY.register("award_all_trophies", AwardAllTrophies::new);
-    DeferredItem<Item> REVOKE_ALL_TROPHIES = OTHERS_REGISTRY.register("revoke_all_trophies", RevokeAllTrophies::new);
+    DeferredItem<Item> AWARD_ALL_TROPHIES = ITEMS_REGISTRY.register("award_all_trophies", AwardAllTrophies::new);
+    DeferredItem<Item> REVOKE_ALL_TROPHIES = ITEMS_REGISTRY.register("revoke_all_trophies", RevokeAllTrophies::new);
 
-    DeferredItem<Item> AWARD_ALL_SECRETS = OTHERS_REGISTRY.register("award_all_secrets", AwardAllSecrets::new);
-    DeferredItem<Item> REVOKE_ALL_SECRETS = OTHERS_REGISTRY.register("revoke_all_secrets", RevokeAllSecrets::new);
+    DeferredItem<Item> AWARD_ALL_SECRETS = ITEMS_REGISTRY.register("award_all_secrets", AwardAllSecrets::new);
+    DeferredItem<Item> REVOKE_ALL_SECRETS = ITEMS_REGISTRY.register("revoke_all_secrets", RevokeAllSecrets::new);
 
-    DeferredItem<Item> REVOKE_ALL_EXTRAS = OTHERS_REGISTRY.register("revoke_all_extras", RevokeAllExtras::new);
+    DeferredItem<Item> REVOKE_ALL_EXTRAS = ITEMS_REGISTRY.register("revoke_all_extras", RevokeAllExtras::new);
 
     //treasure
     DeferredItem<Item> WATERLOGGED_SATCHEL = ITEMS_REGISTRY.register("waterlogged_satchel", () -> new FishingTreasure(Starcatcher.rl("treasure/waterlogged_satchel")));

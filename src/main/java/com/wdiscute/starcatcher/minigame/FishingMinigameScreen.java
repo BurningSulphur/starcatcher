@@ -179,8 +179,8 @@ public class FishingMinigameScreen extends Screen implements GuiEventListener {
         if (markers.secondThin())
             thinZone.copy().setFromProperties(fp, difficulty, hook, bobber).setPenaltyAndReward(0, difficulty.rewardThin()).buildAndAdd(this);
 
-        HitZoneType.Presets.FREEZE.copy().setRecycling(true).buildAndAdd(this);
-        HitZoneType.Presets.SLIDER.copy().buildAndAdd(this);
+        //HitZoneType.Presets.FREEZE.copy().setRecycling(true).buildAndAdd(this);
+        //HitZoneType.Presets.SLIDER.copy().buildAndAdd(this);
 
         hand = Minecraft.getInstance().player.getMainHandItem().is(ModItems.ROD) ? InteractionHand.MAIN_HAND : InteractionHand.OFF_HAND;
     }
