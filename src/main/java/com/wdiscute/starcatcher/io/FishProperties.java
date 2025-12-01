@@ -144,6 +144,16 @@ public record FishProperties(
         return new FishProperties(this.catchInfo.withAlwaysSpawnEntity(alwaysSpawnEntity), this.baseChance, this.customName, this.sw, this.rarity, this.wr, this.br, this.dif, this.daytime, this.weather, this.skipMinigame, this.hasGuideEntry);
     }
 
+    public FishProperties withOverrideMinigameItem(boolean overrideMinigameItem)
+    {
+        return new FishProperties(this.catchInfo.withOverrideMinigameItem(overrideMinigameItem), this.baseChance, this.customName, this.sw, this.rarity, this.wr, this.br, this.dif, this.daytime, this.weather, this.skipMinigame, this.hasGuideEntry);
+    }
+
+    public FishProperties withItemToOverrideWith(Holder<Item> itemToOverrideWith)
+    {
+        return new FishProperties(this.catchInfo.withItemToOverrideWith(itemToOverrideWith), this.baseChance, this.customName, this.sw, this.rarity, this.wr, this.br, this.dif, this.daytime, this.weather, this.skipMinigame, this.hasGuideEntry);
+    }
+
     public FishProperties withBaseChance(int baseChance)
     {
         return new FishProperties(this.catchInfo, baseChance, this.customName, this.sw, this.rarity, this.wr, this.br, this.dif, this.daytime, this.weather, this.skipMinigame, this.hasGuideEntry);
@@ -213,7 +223,9 @@ public record FishProperties(
             Holder<Item> fish,
             Holder<Item> bucketedFish,
             ResourceLocation entityToSpawn,
-            boolean alwaysSpawnEntity
+            boolean alwaysSpawnEntity,
+            boolean overrideMinigameItem,
+            Holder<Item> itemToOverrideWith
     )
     {
         public static final Codec<CatchInfo> CODEC = RecordCodecBuilder.create(instance ->
@@ -221,7 +233,9 @@ public record FishProperties(
                         BuiltInRegistries.ITEM.holderByNameCodec().fieldOf("fish").forGetter(CatchInfo::fish),
                         BuiltInRegistries.ITEM.holderByNameCodec().fieldOf("fish_bucket").forGetter(CatchInfo::bucketedFish),
                         ResourceLocation.CODEC.fieldOf("entity_to_spawn").forGetter(CatchInfo::entityToSpawn),
-                        Codec.BOOL.fieldOf("always_spawn_entity").forGetter(CatchInfo::alwaysSpawnEntity)
+                        Codec.BOOL.fieldOf("always_spawn_entity").forGetter(CatchInfo::alwaysSpawnEntity),
+                        Codec.BOOL.fieldOf("always_spawn_entity").forGetter(CatchInfo::overrideMinigameItem),
+                        BuiltInRegistries.ITEM.holderByNameCodec().optionalFieldOf("override_minigame_item", ModItems.MISSINGNO).forGetter(CatchInfo::itemToOverrideWith)
                 ).apply(instance, CatchInfo::new));
 
 
@@ -230,6 +244,8 @@ public record FishProperties(
                 ByteBufCodecs.holderRegistry(Registries.ITEM), CatchInfo::bucketedFish,
                 ByteBufCodecs.fromCodec(ResourceLocation.CODEC), CatchInfo::entityToSpawn,
                 ByteBufCodecs.BOOL, CatchInfo::alwaysSpawnEntity,
+                ByteBufCodecs.BOOL, CatchInfo::overrideMinigameItem,
+                ByteBufCodecs.holderRegistry(Registries.ITEM), CatchInfo::itemToOverrideWith,
                 CatchInfo::new
         );
 
@@ -237,27 +253,39 @@ public record FishProperties(
                 ModItems.MISSINGNO,
                 ModItems.MISSINGNO,
                 Starcatcher.rl("missingno"),
-                false
+                false,
+                false,
+                ModItems.MISSINGNO
         );
 
         public CatchInfo withFish(Holder<Item> fish)
         {
-            return new CatchInfo(fish, this.bucketedFish, this.entityToSpawn, this.alwaysSpawnEntity);
+            return new CatchInfo(fish, this.bucketedFish, this.entityToSpawn, this.alwaysSpawnEntity, this.overrideMinigameItem, this.itemToOverrideWith);
         }
 
         public CatchInfo withBucketedFish(Holder<Item> bucketedFish)
         {
-            return new CatchInfo(this.fish, bucketedFish, this.entityToSpawn, this.alwaysSpawnEntity);
+            return new CatchInfo(this.fish, bucketedFish, this.entityToSpawn, this.alwaysSpawnEntity, this.overrideMinigameItem, this.itemToOverrideWith);
         }
 
-        public CatchInfo withEntityToSpawn(ResourceLocation fish)
+        public CatchInfo withEntityToSpawn(ResourceLocation entityToSpawn)
         {
-            return new CatchInfo(this.fish, this.bucketedFish, entityToSpawn, this.alwaysSpawnEntity);
+            return new CatchInfo(this.fish, this.bucketedFish, entityToSpawn, this.alwaysSpawnEntity, this.overrideMinigameItem, this.itemToOverrideWith);
         }
 
         public CatchInfo withAlwaysSpawnEntity(boolean alwaysSpawnEntity)
         {
-            return new CatchInfo(this.fish, this.bucketedFish, this.entityToSpawn, alwaysSpawnEntity);
+            return new CatchInfo(this.fish, this.bucketedFish, this.entityToSpawn, alwaysSpawnEntity, this.overrideMinigameItem, this.itemToOverrideWith);
+        }
+
+        public CatchInfo withOverrideMinigameItem(boolean overrideMinigameItem)
+        {
+            return new CatchInfo(this.fish, this.bucketedFish, this.entityToSpawn, alwaysSpawnEntity, overrideMinigameItem, this.itemToOverrideWith);
+        }
+
+        public CatchInfo withItemToOverrideWith(Holder<Item> itemToOverrideWith)
+        {
+            return new CatchInfo(this.fish, this.bucketedFish, this.entityToSpawn, alwaysSpawnEntity, this.overrideMinigameItem, itemToOverrideWith);
         }
     }
 
@@ -1331,6 +1359,7 @@ public record FishProperties(
                                 int goldenChance, int goldenIncrease)
     {
         public static final SizeAndWeight DEFAULT = new SizeAndWeight(41f, 21f, 2001f, 701f, 11, 21);
+        public static final SizeAndWeight NONE = new SizeAndWeight(0, 0, 0, 0, 0, 0);
 
         public static final Codec<SizeAndWeight> CODEC = RecordCodecBuilder.create(instance ->
                 instance.group(

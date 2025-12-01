@@ -1238,7 +1238,7 @@ public class FishingGuideScreen extends Screen
             else
             {
                 if (fp.customName().isEmpty())
-                    components.add(Component.translatable("fish." + fp.catchInfo().fish().getRegisteredName().replace(":", ".")));
+                    components.add(Component.translatable(fp.catchInfo().fish().value().getDescriptionId()));
                 else
                     components.add(Component.translatable("fish.starcatcher." + fp.customName()));
 

@@ -56,6 +56,7 @@ public interface ModItems
     DeferredItem<Item> CLEAR_BOBBER = singleStackItem("clear_bobber");
 
     //baits
+    DeferredItem<Item> ALMIGHTY_WORM = basicItem("almighty_worm");
     DeferredItem<Item> CHERRY_BAIT = basicItem("cherry_bait");
     DeferredItem<Item> LUSH_BAIT = basicItem("lush_bait");
     DeferredItem<Item> SCULK_BAIT = basicItem("sculk_bait");

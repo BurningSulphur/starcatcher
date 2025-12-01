@@ -123,6 +123,32 @@ public class FishAndTrophiesPropertiesProvider extends DatapackBuiltinEntriesPro
                     .withHasGuideEntry(false),
 
 
+            //all
+            fish(fromRL("minecraft", "creeper_head"))
+                    .withSizeAndWeight(FishProperties.SizeAndWeight.NONE)
+                    .withBaseChance(20)
+                    .withBaitRestrictions(
+                            FishProperties.BaitRestrictions.DEFAULT
+                                    .withCorrectBobber(Starcatcher.rl("creeper_bobber")))
+                    .withAlwaysSpawnEntity(true)
+                    .withEntityToSpawn(rl("minecraft", "creeper"))
+                    .withOverrideMinigameItem(true)
+                    .withItemToOverrideWith(ModItems.UNKNOWN_FISH)
+                    .withSkipMinigame(true),
+
+            fish(fromRL("minecraft", "rotten_flesh"))
+                    .withSizeAndWeight(FishProperties.SizeAndWeight.NONE)
+                    .withBaseChance(1)
+                    .withDaytime(FishProperties.Daytime.NIGHT)
+                    .withWeather(FishProperties.Weather.RAIN)
+                    .withHasGuideEntry(false)
+                    .withAlwaysSpawnEntity(true)
+                    .withEntityToSpawn(rl("minecraft", "drowned"))
+                    .withOverrideMinigameItem(true)
+                    .withItemToOverrideWith(ModItems.UNKNOWN_FISH)
+                    .withSkipMinigame(true),
+
+
             //lakes
             overworldLakeFish(ModItems.OBIDONTIEE)
                     .withSizeAndWeight(FishProperties.sw(17.7f, 5, 1200, 200, 20, 33)),
