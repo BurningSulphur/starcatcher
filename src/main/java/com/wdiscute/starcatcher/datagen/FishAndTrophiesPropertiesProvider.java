@@ -1702,19 +1702,51 @@ public class FishAndTrophiesPropertiesProvider extends DatapackBuiltinEntriesPro
                     .withSkipMinigame(true)
                     .withWorldRestrictions(FishProperties.WorldRestrictions.OVERWORLD
                             .withBiomesTags(rl("collectorsreap", "biome/has_spawn/urchin")))
-                    .withMod("collectorsreap")
+                    .withMod("collectorsreap"),
 
 
             //when you can do live catches add the chieftain crab
             //endregion Collectors Reap
 
-            //crittersandcompanions:
-            //  koi_fish
-            //  clam (fresh water clam)
+            //region Miner's Delight
+
+            //
+            //,--.   ,--. ,--.                          ,--.             ,------.           ,--. ,--.         ,--.        ,--.
+            //|   `.'   | `--' ,--,--,   ,---.  ,--.--. |  |  ,---.      |  .-.  \   ,---.  |  | `--'  ,---.  |  ,---.  ,-'  '-.
+            //|  |'.'|  | ,--. |      \ | .-. : |  .--' `-'  (  .-'      |  |  \  : | .-. : |  | ,--. | .-. | |  .-.  | '-.  .-'
+            //|  |   |  | |  | |  ||  | \   --. |  |         .-'  `)     |  '--'  / \   --. |  | |  | ' '-' ' |  | |  |   |  |
+            //`--'   `--' `--' `--''--'  `----' `--'         `----'      `-------'   `----' `--' `--' .`-  /  `--' `--'   `--'
+            //                                                                                        `---'
+            fish(fromRL("miners_delight", "squid"))
+                    .withSizeAndWeight(FishProperties.sw(40, 20, 1300, 700, 10, 20))
+                    .withBaseChance(2) //low to avoid clutter as you are going to see them about the place
+                    .withDifficulty(FishProperties.Difficulty.SINGLE_BIG_FAST_MOVING)
+                    .withRarity(FishProperties.Rarity.COMMON)
+                    .withWorldRestrictions(FishProperties.WorldRestrictions.OVERWORLD
+                            .withMustBeCaughtAboveY(50)
+                            .withMustBeCaughtBelowY(63)
+                            .withBiomesTags(StarcatcherTags.IS_OCEAN, StarcatcherTags.IS_RIVER)
+                    )
+                    .withMod("miners_delight"),
+
+            fish(fromRL("miners_delight", "glow_squid"))
+                    .withSizeAndWeight(FishProperties.sw(40, 20, 1300, 700, 10, 20))
+                    .withBaseChance(2) //low to avoid clutter as you are going to see them about the place
+                    .withDifficulty(FishProperties.Difficulty.SINGLE_BIG_FAST_MOVING)
+                    .withRarity(FishProperties.Rarity.COMMON)
+                    .withWorldRestrictions(FishProperties.WorldRestrictions.OVERWORLD
+                            .withMustBeCaughtBelowY(30))
+                    .withMod("miners_delight")
+
 
             //miners_delight:
             //  glow_squid
             //  squid
+            //endregion Miner's Delight
+
+            //crittersandcompanions:
+            //  koi_fish
+            //  clam (fresh water clam)
 
             //alexsmobs:
             //  cosmic_cod
