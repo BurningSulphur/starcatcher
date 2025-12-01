@@ -1842,17 +1842,42 @@ public class FishAndTrophiesPropertiesProvider extends DatapackBuiltinEntriesPro
                             new FishProperties.Difficulty.Markers(true, true, true, false),
                             FishProperties.Treasure.DEFAULT,
                             new FishProperties.Difficulty.Extras(false, false, true)))
-                    .withMod("alexscaves")
+                    .withMod("alexscaves"),
 
             // Trilocaris (when entity fishing is added
 
             //endregion Alex's Caves
 
+            //region Critters and companions
+            //
+            // ,-----.         ,--.   ,--.     ,--.                                                    ,--.      ,-----.                                              ,--.
+            //'  .--./ ,--.--. `--' ,-'  '-. ,-'  '-.  ,---.  ,--.--.  ,---.       ,--,--. ,--,--,   ,-|  |     '  .--./  ,---.  ,--,--,--.  ,---.   ,--,--. ,--,--,  `--'  ,---.  ,--,--,   ,---.
+            //|  |     |  .--' ,--. '-.  .-' '-.  .-' | .-. : |  .--' (  .-'      ' ,-.  | |      \ ' .-. |     |  |     | .-. | |        | | .-. | ' ,-.  | |      \ ,--. | .-. | |      \ (  .-'
+            //'  '--'\ |  |    |  |   |  |     |  |   \   --. |  |    .-'  `)     \ '-'  | |  ||  | \ `-' |     '  '--'\ ' '-' ' |  |  |  | | '-' ' \ '-'  | |  ||  | |  | ' '-' ' |  ||  | .-'  `)
+            // `-----' `--'    `--'   `--'     `--'    `----' `--'    `----'       `--`--' `--''--'  `---'       `-----'  `---'  `--`--`--' |  |-'   `--`--' `--''--' `--'  `---'  `--''--' `----'
+            //                                                                                                                              `--'
 
 
-            //crittersandcompanions:
-            //  koi_fish
-            //  clam (fresh water clam)
+            fish(fromRL("crittersandcompanions", "clam"))  //no mini game
+                    .withBaseChance(1)
+                    .withHasGuideEntry(false)
+                    .withSkipMinigame(true)
+                    .withWorldRestrictions(FishProperties.WorldRestrictions.OVERWORLD_RIVER
+                            .withMustBeCaughtAboveY(48))
+                    .withMod("crittersandcompanions"),
+
+            fish(fromRL("crittersandcompanions", "koi_fish"))
+                    .withSizeAndWeight(FishProperties.sw(60, 20, 3000, 2000, 10, 20))
+                    .withDifficulty(FishProperties.Difficulty.EVERYTHING_VANISHING)
+                    .withRarity(FishProperties.Rarity.UNCOMMON)
+                    .withWorldRestrictions(FishProperties.WorldRestrictions.OVERWORLD_RIVER
+                            .withMustBeCaughtAboveY(55))
+                    .withMod("crittersandcompanions")
+
+            //could add sea bunny and dumbo octopus with entity fishing
+
+            //endregion  Critters and companions
+
 
             //alexsmobs:
             //  cosmic_cod
