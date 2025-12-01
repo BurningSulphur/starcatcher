@@ -1656,28 +1656,97 @@ public class FishAndTrophiesPropertiesProvider extends DatapackBuiltinEntriesPro
                     .withWorldRestrictions(FishProperties.WorldRestrictions.OVERWORLD
                             .withMustBeCaughtAboveY(55)
                             .withBiomes(rl("environmental", "blossom_woods"), rl("environmental", "blossom_valleys")))
-                    .withMod("environmental")
+                    .withMod("environmental"),
 
             //endregion Environmental
 
+            //region Collectors Reap
+            //
+            // ,-----.         ,--. ,--.                  ,--.                   ,--.             ,------.
+            //'  .--./  ,---.  |  | |  |  ,---.   ,---. ,-'  '-.  ,---.  ,--.--. |  |  ,---.      |  .--. '  ,---.   ,--,--.  ,---.
+            //|  |     | .-. | |  | |  | | .-. : | .--' '-.  .-' | .-. | |  .--' `-'  (  .-'      |  '--'.' | .-. : ' ,-.  | | .-. |
+            //'  '--'\ ' '-' ' |  | |  | \   --. \ `--.   |  |   ' '-' ' |  |         .-'  `)     |  |\  \  \   --. \ '-'  | | '-' '
+            // `-----'  `---'  `--' `--'  `----'  `---'   `--'    `---'  `--'         `----'      `--' '--'  `----'  `--`--' |  |-'
+            //                                                                                                               `--'
+            fish(fromRL("collectorsreap", "platinum_bass"))
+                    .withSeasons(Seasons.EARLY_SPRING, Seasons.MID_AUTUMN, Seasons.LATE_AUTUMN, Seasons.WINTER)
+                    .withSizeAndWeight(FishProperties.sw(40, 12, 1600, 1100, 10, 20))
+                    .withBaseChance(10)
+                    .withDifficulty(FishProperties.Difficulty.EASY_MOVING)
+                    .withRarity(FishProperties.Rarity.COMMON)
+                    .withWorldRestrictions(FishProperties.WorldRestrictions.OVERWORLD
+                            .withBiomesTags(rl("collectorsreap", "biome/has_spawn/platinum_bass")))
+                    .withMod("collectorsreap"),
 
-            //collectorsreap:
-            //  platinum_bass
-            //  tiger_prawn
-            //  clam
-            //  urchin
-            //  (Maybe not) chieftain_crab
 
-            //environmental:
-            //  koi
+            fish(fromRL("collectorsreap", "tiger_prawn"))
+                    .withSizeAndWeight(FishProperties.sw(28, 8, 260, 60, 10, 20))
+                    .withBaseChance(10)
+                    .withDifficulty(FishProperties.Difficulty.EASY_MOVING)
+                    .withRarity(FishProperties.Rarity.COMMON)
+                    .withWorldRestrictions(FishProperties.WorldRestrictions.OVERWORLD
+                            .withBiomesTags(rl("collectorsreap", "biome/has_spawn/tiger_prawn")))
+                    .withMod("collectorsreap"),
 
-            //crittersandcompanions:
-            //  koi_fish
-            //  clam (fresh water clam)
+            fish(fromRL("collectorsreap", "clam"))  //no mini game
+                    .withBaseChance(5)
+                    .withHasGuideEntry(false)
+                    .withSkipMinigame(true)
+                    .withWorldRestrictions(FishProperties.WorldRestrictions.OVERWORLD
+                            .withBiomesTags(rl("collectorsreap", "biome/has_spawn/clam")))
+                    .withMod("collectorsreap"),
+
+            fish(fromRL("collectorsreap", "urchin"))  //no mini game
+                    .withBaseChance(5)
+                    .withHasGuideEntry(false)
+                    .withSkipMinigame(true)
+                    .withWorldRestrictions(FishProperties.WorldRestrictions.OVERWORLD
+                            .withBiomesTags(rl("collectorsreap", "biome/has_spawn/urchin")))
+                    .withMod("collectorsreap"),
+
+
+            //when you can do live catches add the chieftain crab
+            //endregion Collectors Reap
+
+            //region Miner's Delight
+
+            //
+            //,--.   ,--. ,--.                          ,--.             ,------.           ,--. ,--.         ,--.        ,--.
+            //|   `.'   | `--' ,--,--,   ,---.  ,--.--. |  |  ,---.      |  .-.  \   ,---.  |  | `--'  ,---.  |  ,---.  ,-'  '-.
+            //|  |'.'|  | ,--. |      \ | .-. : |  .--' `-'  (  .-'      |  |  \  : | .-. : |  | ,--. | .-. | |  .-.  | '-.  .-'
+            //|  |   |  | |  | |  ||  | \   --. |  |         .-'  `)     |  '--'  / \   --. |  | |  | ' '-' ' |  | |  |   |  |
+            //`--'   `--' `--' `--''--'  `----' `--'         `----'      `-------'   `----' `--' `--' .`-  /  `--' `--'   `--'
+            //                                                                                        `---'
+            fish(fromRL("miners_delight", "squid"))
+                    .withSizeAndWeight(FishProperties.sw(40, 20, 1300, 700, 10, 20))
+                    .withBaseChance(2) //low to avoid clutter as you are going to see them about the place
+                    .withDifficulty(FishProperties.Difficulty.SINGLE_BIG_FAST_MOVING)
+                    .withRarity(FishProperties.Rarity.COMMON)
+                    .withWorldRestrictions(FishProperties.WorldRestrictions.OVERWORLD
+                            .withMustBeCaughtAboveY(50)
+                            .withMustBeCaughtBelowY(63)
+                            .withBiomesTags(StarcatcherTags.IS_OCEAN, StarcatcherTags.IS_RIVER)
+                    )
+                    .withMod("miners_delight"),
+
+            fish(fromRL("miners_delight", "glow_squid"))
+                    .withSizeAndWeight(FishProperties.sw(40, 20, 1300, 700, 10, 20))
+                    .withBaseChance(2) //low to avoid clutter as you are going to see them about the place
+                    .withDifficulty(FishProperties.Difficulty.SINGLE_BIG_FAST_MOVING)
+                    .withRarity(FishProperties.Rarity.COMMON)
+                    .withWorldRestrictions(FishProperties.WorldRestrictions.OVERWORLD
+                            .withMustBeCaughtBelowY(30))
+                    .withMod("miners_delight")
+
 
             //miners_delight:
             //  glow_squid
             //  squid
+            //endregion Miner's Delight
+
+            //crittersandcompanions:
+            //  koi_fish
+            //  clam (fresh water clam)
 
             //alexsmobs:
             //  cosmic_cod
@@ -1687,7 +1756,9 @@ public class FishAndTrophiesPropertiesProvider extends DatapackBuiltinEntriesPro
             //alexscaves:
             //  lanternfish
             //  tripodfish
+            // Trilocaris (when entity fishing is added
 
+  
 
     );
     //endregion restricted fps
